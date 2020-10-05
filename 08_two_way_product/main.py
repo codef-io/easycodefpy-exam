@@ -54,12 +54,12 @@ parameter = {
     'phoneNo1': '',
 }
 
-# 코드에프 정보 조회 요청
-# - 서비스타입(0:정식, 1:데모, 2:샌드박스)
-product_url = '/v1/kr/public/ft/do-not-call/set-register' # 공정거래위원회 수신거부 등록/해제 신청 URL
+# 공정거래위원회 수신거부 등록/해제 신청 URL
+product_url = '/v1/kr/public/ft/do-not-call/set-register'
 service_type = ServiceType.SANDBOX
 
-# * 정보 조회 요청 메소드 사용
+# 코드에프 정보 조회 요청
+# - 서비스타입(0:정식, 1:데모, 2:샌드박스)
 res = codef.request_product(product_url, service_type, parameter)
 
 # 결과 확인
@@ -83,4 +83,5 @@ setup_two_way_info(parameter, res)
 
 res = codef.request_certification(product_url, service_type, parameter)
 
+# 결과 확인
 print(res)
